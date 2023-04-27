@@ -1,0 +1,23 @@
+{
+  "name": "Aisystant",
+  "about_url": "https://github.com/aisystant/discourse-template",
+  "modifiers": {
+    "serialize_topic_excerpts": true
+  },
+  "color_schemes": {
+    "Aisystant Light": {
+      "primary": "484961",
+      "secondary": "ffffff",
+      "tertiary": "5f65dc",
+      "quaternary": "88889b",
+      "header_background": "ffffff",
+      "header_primary": "484961",
+      "highlight": "ecf0ff",
+      "danger": "bb1122",
+      "success": "3d854d",
+      "love": "9d256b",
+      "selected": "e9e9e9",
+      "hover": "f2f2f2"
+    }
+  }
+}
