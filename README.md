@@ -2,6 +2,10 @@
 
 ## Settings
 
-Settings -> Basic Setup -> base font -> Roboto
+- Settings -> Basic Setup -> base font -> Roboto
+- Settings -> Basic Setup -> heading font -> Roboto
+- Settings -> Basic Setup -> default dark mode color scheme id -> Aisystant Light
 
-Settings -> Basic Setup -> heading font -> Roboto
+## Development/test settings
+
+- Settings -> Plugins -> styleguide enabled
