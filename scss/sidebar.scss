@@ -1,0 +1,45 @@
+.sidebar-wrapper {
+  background-color: var(--secondary);
+  --d-sidebar-highlight-color: transparent;
+
+  & .sidebar-section-header-wrapper {
+    & .sidebar-section-header-button {
+      border-radius: .5rem;
+    }
+  }
+}
+
+.sidebar-section-link-wrapper {
+  & .sidebar-section-link {
+    border-radius: $border-radius;
+    color: var(--primary);
+    transition: all .15s ease-in-out;
+    &:hover {
+      color: var(--tertiary-hover);
+    }
+    &.active {
+      color: var(--tertiary-hover);
+      background-color: var(--d-selected);
+    }
+    & .sidebar-section-link-prefix {
+      color: inherit !important;
+    }
+  }
+}
+
+.chat-enabled {
+  .sidebar-section-link--active {
+    background: var(--highlight) !important;
+  }
+}
+
+.sidebar-more-section-links-details .sidebar-more-section-links-details-summary {
+  color: $gray-600;
+  transition: all .15s ease-in-out;
+  & .d-icon {
+    color: inherit !important;
+  }
+  &:hover {
+    color: var(--primary);
+  }
+}

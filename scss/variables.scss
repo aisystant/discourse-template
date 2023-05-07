@@ -1,0 +1,20 @@
+$base-font-size: 1rem;
+$base-font-size-smallest: .8125rem;
+$base-font-size-smaller: .875rem;
+$border-radius: .625rem;
+$gray-600: #88889A;
+
+:root {
+  --base-font-size: 16px;
+  --line-height-large: 1.5;
+  --d-button-border-radius: 1.875rem;
+  --d-input-border-radius: #{$border-radius};
+  --d-sidebar-row-font-size: #{$base-font-size};
+  --d-sidebar-row-vertical-padding: .625rem;
+  --d-sidebar-row-horizontal-padding: 1.2rem;
+  --d-sidebar-row-height: 2.625rem;
+  --d-sidebar-section-header-text-font-size: #{$base-font-size-smaller};
+  --d-nav-pill-border-radius: #{$border-radius};
+  --font-down-1: #{$base-font-size-smaller};
+  --font-down-2: #{$base-font-size-smallest};
+}

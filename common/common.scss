@@ -1,23 +1,5 @@
-$base-font-size: 1rem;
-$base-font-size-smallest: .8125rem;
-$base-font-size-smaller: .875rem;
-$border-radius: .625rem;
-$gray-600: #88889A;
-
-:root {
-    --base-font-size: 16px;
-    --line-height-large: 1.5;
-    --d-button-border-radius: 1.875rem;
-    --d-input-border-radius: #{$border-radius};
-    --d-sidebar-row-font-size: #{$base-font-size};
-    --d-sidebar-row-vertical-padding: .625rem;
-    --d-sidebar-row-horizontal-padding: 1.2rem;
-    --d-sidebar-row-height: 2.625rem;
-    --d-sidebar-section-header-text-font-size: #{$base-font-size-smaller};
-    --d-nav-pill-border-radius: #{$border-radius};
-    --font-down-1: #{$base-font-size-smaller};
-    --font-down-2: #{$base-font-size-smallest};
-}
+@import "variables";
+@import "sidebar";
 
 .btn {
     font-size: var(--font-down-1);
@@ -46,52 +28,6 @@ input, textarea {
 .badge-card,
 .alert {
     border-radius: $border-radius;
-}
-
-.sidebar-wrapper {
-    background-color: var(--secondary);
-    --d-sidebar-highlight-color: transparent;
-
-    & .sidebar-section-header-wrapper {
-        & .sidebar-section-header-button {
-            border-radius: .5rem;
-        }
-    }
-}
-
-.sidebar-section-link-wrapper {
-    & .sidebar-section-link {
-        border-radius: $border-radius;
-        color: var(--primary);
-        transition: all .15s ease-in-out;
-        &:hover {
-            color: var(--tertiary-hover);
-        }
-        &.active {
-            color: var(--tertiary-hover);
-            background-color: var(--d-selected);
-        }
-        & .sidebar-section-link-prefix {
-            color: inherit !important;
-        }
-    }
-}
-
-.chat-enabled {
-    .sidebar-section-link--active {
-        background: var(--highlight) !important;
-    }
-}
-
-.sidebar-more-section-links-details .sidebar-more-section-links-details-summary {
-    color: $gray-600;
-    transition: all .15s ease-in-out;
-    & .d-icon {
-        color: inherit !important;
-    }
-    &:hover {
-        color: var(--primary);
-    }
 }
 
 .nav-pills {
