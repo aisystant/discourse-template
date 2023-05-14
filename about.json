@@ -4,6 +4,9 @@
   "modifiers": {
     "serialize_topic_excerpts": true
   },
+  "assets": {
+    "icons-sprite": "/assets/sprite.svg"
+  },
   "color_schemes": {
     "Aisystant Light": {
       "primary": "484961",

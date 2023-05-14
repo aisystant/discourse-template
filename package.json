@@ -1,0 +1,10 @@
+{
+  "name": "discourse-template",
+  "version": "1.0.0",
+  "scripts": {
+    "svg-sprite": "npx svg-sprite --symbol --symbol-dest= --symbol-sprite= --shape-id-generator='ai-icon-%s' --dest=assets icons/*.svg"
+  },
+  "devDependencies": {
+    "svg-sprite": "^2.0.2"
+  }
+}
