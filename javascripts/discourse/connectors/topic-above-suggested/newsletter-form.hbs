@@ -1,0 +1,23 @@
+{{#unless this.currentUser}}
+  <div class='clearfix'></div>
+  <div class="alert alert-info" style="margin-top: 1em;">
+    <h1>Очень полезная рассылка</h1>
+
+    {{#if this.isSubmitted}}
+      Мы выслали письмо для подтверждения.
+    {{else}}
+      <form {{on "submit" this.onSubmit}}>
+        {{input value=this.username type="text" name="username" placeholder="Имя" required=true disabled=this.isLoading}}
+        {{input value=this.email type="email" name="email" placeholder="Email" required=true disabled=this.isLoading}}
+        <button type="submit" class="btn btn-primary" disabled={{this.isLoading}}>
+          {{#if this.isLoading}}{{loading-spinner size="small"}}&nbsp;{{/if}} Подписаться
+        </button>
+
+        {{#if this.error}}
+          <br />
+          <div class="tip bad">{{d-icon 'times'}} {{this.error}}</div>
+        {{/if}}
+      </form>
+    {{/if}}
+  </div>
+{{/unless}}
