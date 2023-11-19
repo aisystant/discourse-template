@@ -15,3 +15,42 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/93850139" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+
+<script>
+    function setupEventHandlers() {
+        console.log('Setting up event handlers for various elements');
+
+        // Обработчики для ссылок
+        var links = [
+            {selector: 'a[href="https://system-school.ru/#courses"]', goal: 'click_click-kupit_id43'},
+            {selector: 'a[href="https://aisystant.system-school.ru/lk/#/cabinet/courses/online"]', goal: 'click_click-ychitsa_id44'}
+        ];
+
+        // Установка обработчиков для ссылок
+        links.forEach(function(link) {
+            var elements = document.querySelectorAll(link.selector);
+            elements.forEach(function(element) {
+                element.addEventListener('click', function() {
+                    console.log('Link clicked:', element.href);
+                    ym(93850139, 'reachGoal', link.goal);
+                });
+            });
+        });
+
+        // Обработчик для span с определенным текстом
+        var spans = document.querySelectorAll('span');
+        spans.forEach(function(span) {
+            if (span.innerHTML.trim() === 'Вход') {
+                span.addEventListener('click', function() {
+                    console.log('Span clicked:', span.innerHTML);
+                    ym(93850139, 'reachGoal', 'click_click-entr_ik_id45');
+                });
+            }
+        });
+    }
+
+    // Отложенное выполнение функции установки обработчиков событий после загрузки страницы
+    window.onload = function() {
+        setTimeout(setupEventHandlers, 3000); // Задержка в 3000 мс (3 секунды)
+    };
+</script>
