@@ -59,3 +59,59 @@
         setTimeout(setupEventHandlers, 3000); // Задержка в 3000 мс (3 секунды)
     };
 </script>
+
+
+<script>
+// Function to fetch user data and their email, then identify in PostHog
+function fetchUserAndEmail() {
+  // First request to server to get current user data
+  fetch('/session/current.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Check if current user data is available
+      if (!data.current_user) {
+        throw new Error('Current user data is not available');
+      }
+
+      const username = data.current_user.username;
+      const name = data.current_user.name;
+
+      // Second request to get email list by username
+      return fetch(`/u/${username}/emails.json`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Email fetch failed');
+          }
+          return response.json();
+        })
+        .then(emailData => {
+          // Check if email data is available
+          if (!emailData.email) {
+            throw new Error('Email data is not available');
+          }
+
+          // Identify the user in PostHog
+          posthog.identify(
+            emailData.email, // Use email as the unique identifier
+            {
+              email: emailData.email,
+              name: name,
+              username: username
+            }
+          );
+        });
+    })
+    .catch(error => {
+      console.error('An error occurred:', error);
+    });
+}
+
+// Call the function on script load
+fetchUserAndEmail();
+</script>
+
